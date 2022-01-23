@@ -3,12 +3,14 @@ export const initialState = {
     authUserFireStoreId:null,
     publicUsers:null,
     friend:null,
+    roomEntry:null,
 }
 export const actionTypes = {
     SET__USER:"SET__USER",
     SET__USER__ID:"SET__USER__ID",
     SET__PUBLIC:"SET__PUBLIC",
     SET__FRIEND:"SET__FRIEND",
+    SET__ROOMENTRY:"SET__ROOMENTRY",
 }
  const reducer=(state, action) => {
     
@@ -33,6 +35,11 @@ export const actionTypes = {
                 ...state,
                 friend:action.friend,
             }   
+        case actionTypes.SET__ROOMENTRY:
+            return {
+                ...state,
+                roomEntry:action.roomEntry,
+            }     
         default:
             return state;
     }

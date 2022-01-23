@@ -1,5 +1,5 @@
 import moment from 'moment';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import ReactAudioPlayer from 'react-audio-player';
 import ReactPlayer from 'react-player';
 import { useStateValue } from '../../hooks/StateProvider';
@@ -11,6 +11,7 @@ function Messages({message,time,displayName}) {
   const [text, settext] = useState(false);
   const [{authUser}]=useStateValue();
   const [sender, setsender] = useState(false);
+
 
   useEffect(() => {
     if(message){

@@ -48,12 +48,6 @@
     flex-direction: column;
     justify-content: top;
 }
-.extension1{
-    align-items: flex-start;
-}
-.extension2{
-    align-items: flex-end;
-}
 .sendermessage{
     height: fit-content;
     width: fit-content;
@@ -83,8 +77,6 @@
     }
     
 }
-
-
 .iamge__container{
     max-height: fit-content;
     max-width: 380px;

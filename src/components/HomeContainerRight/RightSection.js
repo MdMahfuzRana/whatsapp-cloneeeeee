@@ -15,11 +15,12 @@ import { actionTypes } from '../../hooks/reducer';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import CircularProgress from '@mui/material/CircularProgress';
 import Messages from './Messages';
+import moment from 'moment';
 
 
 
 function RightSection() {
-  const [{friend,authUser,authUserFireStoreId},dispatch] = useStateValue()
+  const [{friend,authUser,authUserFireStoreId,roomEntry},dispatch] = useStateValue()
   const [message, setmessage] = useState('')
   const [userMessages, setuserMessages] = useState(null)
   const [AuthUserMessages, setAuthUserMessages] = useState(null)
@@ -32,12 +33,20 @@ function RightSection() {
   const [isLoading, setisLoading] = useState(false);
   const audio = new Audio(audios)
   const endOfMessage = useRef(null);
-  const divRref = useRef(null);
+  const [lastSeen, setlastSeen] = useState('00:00');
 
 
 
   useEffect(() => {
+    if (endOfMessage) {
+      endOfMessage.current.addEventListener('DOMNodeInserted', event => {
+        const { currentTarget: target } = event;
+        target.scroll({ top: target.scrollHeight, behavior: 'smooth' });
+      });
+    }
+  }, [])
 
+  useEffect(() => {
     if(friend && authUser){
       if(friend && authUser){
         setroomId(friend?.id+authUser?.uid)
@@ -52,8 +61,8 @@ function RightSection() {
       }
     }
 
-    if(roomIdEntry){
-      db.collection("rooms").doc(`${roomIdEntry}`).collection("messages").orderBy('timestamp','asc').onSnapshot((snapShot)=>(
+    if(roomEntry){
+      db.collection("rooms").doc(`${roomEntry}`).collection("messages").orderBy('timestamp','asc').onSnapshot((snapShot)=>(
         setuserMessages(
           snapShot.docs.map((doc)=>(
               doc.data()
@@ -77,18 +86,31 @@ function RightSection() {
   if(roomDataSender){
     if(roomDataSender[i]?.id===roomId2){
       setroomIdEntry(roomId2)
+      dispatch({
+        type:actionTypes.SET__ROOMENTRY,
+        roomEntry:roomId2
+      })
     }
     else{
       setroomIdEntry(roomId)
+      dispatch({
+        type:actionTypes.SET__ROOMENTRY,
+        roomEntry:roomId
+      })
     }
   }
+  // if(friend){
+  //   db.collection('rooms').doc(`${roomEntry}`).collection('lastSeen').onSnapshot(snapShot=>{
+  //     snapShot.docs.map(doc=>{
+  //       if(doc?.data()?.lastSeen?.displayName!==authUser.displayName){
+  //         setlastSeen(doc?.data()?.lastSeen?.timeStamp)
+  //       }
+  //     }
+  //     )
+  //   })
+  // }
+  }, [friend,authUser,roomId2,roomIdEntry,roomId,i,authUserFireStoreId,lastSeen])
 
-    console.log('this is the room dtaaroomData')
-  }, [friend,authUser,roomId2,roomIdEntry,roomId,i,authUserFireStoreId])
-
-const scrollToBottom = () => {
-  divRref.current.scrollIntoView({ behavior: 'smooth' });
-}
 
   const sendMessage = () => {
     if(message.length>0){
@@ -131,7 +153,6 @@ const scrollToBottom = () => {
             })
             setisLoading(true)
             setmessage('')
-            scrollToBottom()
           }
         }
       }
@@ -150,7 +171,7 @@ const scrollToBottom = () => {
            <div className='rightSection__top__header'>
                <div className='top__header__section__first__container'>
                     <div style={{marginRight:"20px"}}><Avatar src={friend?.data.photoURL} /></div>
-                    <div><p>{friend?.data.displayName}</p><p style={{fontWeight:"normal"}}>last seen at...</p></div>
+                    <div><p>{friend?.data.displayName}</p><p style={{fontWeight:"normal"}}>last seen at... {moment(lastSeen).format('LT')}</p></div>
                </div>
                <div className='topHeader__second__container'>
                   <IconButton>
@@ -171,7 +192,7 @@ const scrollToBottom = () => {
                   </IconButton>
                </div> 
             </div> 
-           <div className='chathistriand__field__container extension1' >
+           <div className='chathistriand__field__container' ref={endOfMessage} >
             {             
               userMessages?.map(umesages=>(
                   <Messages message={umesages?.message?.message} time={umesages?.message?.created} displayName={umesages?.message?.displayName}    />

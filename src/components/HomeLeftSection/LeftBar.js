@@ -9,19 +9,19 @@ import SearchIcon from '@mui/icons-material/Search'
 import Inputer from '../input/Inputer';
 import { useStateValue } from '../../hooks/StateProvider';
 import { actionTypes } from '../../hooks/reducer';
-import { auth, db, provider } from '../../config/FirebaseConfig/Firebase'
+import { auth, createTimestamp, db, provider } from '../../config/FirebaseConfig/Firebase'
 import { useNavigate  } from 'react-router-dom'
 
 
 function LeftBar({avatar}) {
-    const [{publicUsers},dispatch] = useStateValue()
+    const [{publicUsers,friend,authUser,roomEntry},dispatch] = useStateValue()
     const history = useNavigate();
     return (
         <div className='leftbar__main__container'>
            <div className='leftbar__header__containaer'>
                <div className='avatar__cotnainer'>
                    <IconButton>
-                     <Avatar onClick={()=>{auth.signOut();history("/")}} src={avatar} alt="" />
+                     <Avatar onClick={()=>{auth.signOut();window.location.reload();}} src={avatar} alt="" />
                    </IconButton>
                </div>
                <div className='iconcontainer'>
@@ -45,12 +45,22 @@ function LeftBar({avatar}) {
            <div className='people__container'>
 {publicUsers?.map((user)=>(
               <div key={user?.id} onClick={()=>{
+
                   if(user){
                       dispatch({
                           type:actionTypes.SET__FRIEND,
                           friend:user
-                      })
+                      });
                   }
+
+                //   db.collection('rooms').doc(`${roomEntry}`).collection('lastSeen').add({
+                //     lastSeen:{
+                //         displayName:authUser?.displayName,
+                //         timestamp:createTimestamp()
+                //     }
+                // })
+
+
               }} className='people__container__self'> 
               <div style={{width:"fit-content",display:'flex',justifyContent:"center",alignItems:"center"}}><Avatar src={user?.data.photoURL} /></div>
               <div className='people__container__second'>
