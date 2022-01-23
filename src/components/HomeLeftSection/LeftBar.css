@@ -1,0 +1,91 @@
+.leftbar__main__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.leftbar__header__containaer{
+    height: 70px;
+    width: 100%;
+    background-color: white;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.avatar__cotnainer{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center
+}
+.iconcontainer{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+@media screen and (max-width: 400px) {
+    .iconcontainer{
+        height: 100%;
+        width: 40%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    
+    }
+    
+}
+.leftbar__search__container{
+    height: 55px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-bottom: 1px solid lightgray;
+}
+.search__container{
+    height: 45px;
+    width: 80%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.people__container{
+    height: 88.5vh;
+    width: 100%;
+    background-color: white;
+    overflow: auto;
+}
+.people__container::-webkit-scrollbar{
+    display: none;
+}
+.people__container__self{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 75px;
+    border-bottom: 1px solid lightgray;
+    padding: 10px;
+}
+.people__container__self:hover{
+    cursor: pointer;
+    background-color: whitesmoke;
+}
+.people__container__second{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+.people__container__time__and__user{
+    height: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

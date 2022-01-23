@@ -1,0 +1,197 @@
+.rightsection__main__container{
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+.rightSection__top__header{
+    height: 72px;
+    width: 100%;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.top__header__section__first__container{
+    height: 100%;
+    width: 500px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+}
+@media screen and (max-width: 850px) {
+    .top__header__section__first__container>div>p{
+        font-size: small;
+        font-weight: bold;
+    }
+    
+}
+.topHeader__second__container{
+    height: 100%;
+    width: 150px;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    margin-right: 10px;
+}
+.chathistriand__field__container{
+    height: 90%;
+    width: 100%;
+    background-color: lightgray;
+    padding: 20px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+}
+.extension1{
+    align-items: flex-start;
+}
+.extension2{
+    align-items: flex-end;
+}
+.sendermessage{
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    justify-content: flex-start;
+    align-items: top;
+    padding: 5px;
+    max-width: 75%;
+}
+.recieverrmessage{
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: top;
+    padding: 5px;
+}
+@media screen and (max-width: 1150px) {
+    .sendermessage{
+        height: fit-content;
+        width: fit-content;
+        display: flex;
+        justify-content: flex-start;
+        align-items: top;
+        padding: 5px;
+        max-width: 90%;
+    }
+    
+}
+
+
+.iamge__container{
+    max-height: fit-content;
+    max-width: 380px;
+    min-height: 250px;
+    min-width: 260px;
+    background-color: rgb(163, 255, 209);
+    display: flex;
+    border-radius: 10px;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;    
+}
+.recieveriamge__container{
+    max-height: fit-content;
+    max-width: 380px;
+    min-height: 250px;
+    min-width: 260px;
+    background-color: white;
+    display: flex;
+    border-radius: 10px;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;    
+}
+.photo__header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.photo__header>p{
+    font-size: small;
+    font-weight: bold;
+    color: rgb(102, 100, 100);
+    padding: 10px;
+    padding-left: 0px;
+    padding-top: 0px;
+}
+.image__background__photo{
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.image__sent{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    object-fit: contain;
+}
+
+
+
+
+
+.text__container{
+    max-height: fit-content;
+    max-width: 380px;
+    min-width: 260px;
+    background-color: rgb(163, 255, 209);
+    display: flex;
+    border-radius: 10px;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.recievertext__container{
+    max-height: fit-content;
+    max-width: 380px;
+    min-width: 260px;
+    background-color: white;
+    display: flex;
+    border-radius: 10px;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;    
+}
+
+
+
+
+
+
+.footer__main__container{
+    height: 60px;
+    width: 100%;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    padding:"20px"
+}
+.input__container__formessgae__send{
+    height: 40px;
+    width: 65%;
+    border: 1px solid lightgray;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding:"10px"
+}
+
+
