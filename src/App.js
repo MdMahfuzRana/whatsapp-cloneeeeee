@@ -4,7 +4,6 @@ import Button from './components/button/Button';
 import Home from './pages/homePage/Home';
 import Login from './pages/loginPage/Login';
 import { Routes, Route, Link } from "react-router-dom";
-import Test from './Test';
 
 
 function App() {
@@ -13,7 +12,6 @@ function App() {
           <Routes>
             <Route path="/" exact={true} element={<Login />} />
             <Route path="/home" exact={true} element={<Home />} />
-            <Route path="/test" element={<Test.js />} />
           </Routes>
         </div>
   );
