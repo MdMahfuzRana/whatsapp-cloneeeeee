@@ -15,15 +15,23 @@ function Messages({message,time,displayName}) {
 
   useEffect(() => {
     if(message){
-      const chackMessages = message.split('.')
-      if(chackMessages.length===2){
-        if(chackMessages[1]==='jpg'){
+      const chackMessages = message.split('?')
+      const findFormate = chackMessages[0].split('.')
+      if(findFormate){
+        let length = findFormate.length
+        if(findFormate[length-1]==='jpg'){
           setimage(true)
         }
-        else if(chackMessages[1]==='mp4'){
+        else if(findFormate[length-1]==='mp4'){
           setvedio(true)
         }
-        else if(chackMessages[1]==='mp3'){
+        else if(findFormate[length-1]==='jpeg'){
+          setimage(true)
+        }
+        else if(findFormate[length-1]==='png'){
+          setimage(true)
+        }
+        else if(findFormate[length-1]==='mp3'){
           setaudio(true)
         }
         else{
@@ -37,23 +45,22 @@ function Messages({message,time,displayName}) {
   if(displayName && authUser){
     if(displayName===authUser.displayName){
       setsender(true)
-      console.log("true")
     }
   }
-  }, [image,audio,vedio,text,sender,displayName,authUser]);
+  }, [image,audio,vedio,text,sender,displayName,authUser,message]);
   
   return (
   <>
 
 { image?  
-        (<div className='recieverrmessage'>
+        (<div className={sender? 'recieverrmessage':'sendermessage'}>
               <div className='iamge__container'>
                 <div className='photo__header'>
                 <p >{displayName}</p>
-                <p>time</p>
+                <p>{moment(time).format('LLLL')}</p>
                 </div>
                 <div className='image__background__photo'>
-                  <img className='image__sent' src='https://images.pexels.com/photos/2567011/pexels-photo-2567011.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' alt='' />
+                  <img className='image__sent' src={message} alt='' />
                 </div>
               </div>
           </div>):null
@@ -61,29 +68,29 @@ function Messages({message,time,displayName}) {
 {text?       <div className={sender? 'recieverrmessage':'sendermessage'}>
               <div className={sender? 'text__container':'recievertext__container'}>
                 <div className='photo__header'>
-                  <p >{displayName}</p>
-                  <p style={{fontSize:".7rem"}}>{moment(time).format('LLLL')}</p>
+                  <p className='name__in__text'>{displayName}</p>
+                  <p className='date__in__text'>{moment(time).format('LLL')}</p>
                 </div>
                 <div className='image__background__photo'>
-                  <p>
+                  <p className='message__in__text'>
                   {message}
                   </p>
                 </div>
               </div>
           </div>:null
 }
-{vedio?         <div className='sendermessage'>
+{vedio?         <div className={sender? 'recieverrmessage':'sendermessage'}>
               <div className='recieveriamge__container'>
                 <div className='photo__header'>
                 <p >{displayName}</p>
                 <p>time</p>
                 </div>
-                <ReactPlayer width='100%' height='100%' url='https://youtu.be/4yWLofNagy8' />
+                <ReactPlayer width='100%' height='100%' url={message} />
               </div>
           </div>:null
 }
 {audio?
-          (<div className='sendermessage'>
+          (<div className={sender? 'recieverrmessage':'sendermessage'}>
               <div className='recievertext__container'>
                 <div className='photo__header'>
                 <p >{displayName}</p>
@@ -91,7 +98,7 @@ function Messages({message,time,displayName}) {
                 </div>
                 <div className='image__background__photo'>
                 <ReactAudioPlayer
-                    src={''}
+                    src={message}
                     autoPlay
                     controls
                   />

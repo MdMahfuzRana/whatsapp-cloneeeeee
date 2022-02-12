@@ -47,6 +47,7 @@
     display: flex;
     flex-direction: column;
     justify-content: top;
+    /* transform: rotate(180deg); */
 }
 .sendermessage{
     height: fit-content;
@@ -77,6 +78,7 @@
     }
     
 }
+
 .iamge__container{
     max-height: fit-content;
     max-width: 380px;
@@ -109,14 +111,14 @@
     justify-content: space-between;
     align-items: center;
 }
-.photo__header>p{
+/* .photo__header>p{
     font-size: small;
     font-weight: bold;
     color: rgb(102, 100, 100);
     padding: 10px;
     padding-left: 0px;
     padding-top: 0px;
-}
+} */
 .image__background__photo{
     height: fit-content;
     width: fit-content;
@@ -159,7 +161,75 @@
     justify-content: flex-start;
     align-items: flex-start;    
 }
+.date__in__text{
+    font-size: .7rem;
+    font-weight: bold;
+    color: rgb(102, 100, 100);
+    padding: 10px;
+    padding-left: 0px;
+    padding-top: 0px;
+}
+.name__in__text{
+    font-size: .9rem;
+    font-weight: bold;
+    color: rgb(102, 100, 100);
+    padding: 10px;
+    padding-left: 0px;
+    padding-top: 0px; 
+}
+.message__in__text{
+    font-size: .9rem;
+    font-weight: bold;
+    color: rgb(102, 100, 100);
 
+}
+@media screen and (max-width: 380px) {
+    .text__container{
+        max-height: fit-content;
+        max-width: 70px;
+        min-width: 260px;
+        background-color: rgb(163, 255, 209);
+        display: flex;
+        border-radius: 10px;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .recievertext__container{
+        max-height: fit-content;
+        max-width: 70px;
+        min-width: 260px;
+        background-color: white;
+        display: flex;
+        border-radius: 10px;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;    
+    }
+    .date__in__text{
+        font-size: .6rem;
+        font-weight: bold;
+        color: rgb(102, 100, 100);
+        padding: 10px;
+        padding-left: 0px;
+        padding-top: 0px;
+    }
+    .name__in__text{
+        font-size: .7rem;
+        font-weight: bold;
+        color: rgb(102, 100, 100);
+        padding: 10px;
+        padding-left: 0px;
+        padding-top: 0px; 
+    }
+    .message__in__text{
+        font-size: .8rem;
+        font-weight: bold;
+        color: rgb(102, 100, 100);
+
+    }
+    
+}
 
 
 

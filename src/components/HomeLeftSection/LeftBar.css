@@ -84,10 +84,30 @@
     height: 100%;
     padding: 10px;
 }
+.people__container__time__and__user1{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .people__container__time__and__user{
     height: 15px;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.buildFriend>p{
+    padding: 10px;
+    background-color: rgb(199, 191, 191);
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: small;
+}
+.buildFriend>p:hover{
+    cursor: pointer;
+    background-color: #a3ffd1;
+    color: gray;
 }

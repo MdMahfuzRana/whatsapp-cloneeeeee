@@ -24,11 +24,23 @@
     }
 }
 @media screen and (max-width: 850px) {
-    .homecontainer__left{
+    .left{
         display: none;
     }
-    .homecontainer__right{
+    .right{
         width: 100%;
     }
+    .left2{
+        width: 100%;
+    }
+    .right2{
+        display: none;
+    }
+    /* .homecontainer__right{
+        display: none;
+    }
+    .homecontainer__left{
+        width: 100%;
+    } */
     
 }
