@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# whatsapp-cloneeeeee
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+whatsapp-cloneeeeee is a whatsapp clone web application built with react and firebase it allows you to send messages with people and serach for them and many more
 
-## Available Scripts
+## WARNING
 
-In the project directory, you can run:
+this app is just an open source project and it doesn't have the feature of deleting your account also you will sign in with your google account so use a fake one you are responsible of giving your data.
 
-### `npm start`
+## Live Demo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Search for "Md Mahfuz Rana" and talk with me.
+https://whtsapp-clone-33332.web.app/ ALLOW NOTIFICATIONS !!!
+the app may not run because free limits of firebase or hosting service has been exceeded !!
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features of the app
 
-### `npm test`
+* Messaging users in real time.
+* You can text messages.
+* You can send Images.
+<!-- You can send an audio message. -->
+* You click on an image sent in a chat and it will smoothly animate to the center so you can see it.
+<!-- You can see if the user is typing or recording. -->
+<!-- You can record an audio and send it. -->
+* You can delete the conversation.
+* You can search for users.
+* You can see the online status of users.
+* You can see the unread messages.
+* You will have a seen at the bottom if the user saw your message.
+* You have an arrow button that allows you to scroll down the chat you also see the unread messages in it.
+* You can fetch 10 messages in a chat and if you scroll up you will fetch more messages.
+<!-- The audio slider is grey when you send an audio message and is green when you receive one and becomes blue if the receiver plays the audio. -->
+* The audio player allows you to see the full time of the audio and if you play it you will see the current time.
+* You can receive notifications if a user sent you a message.
+* A sound is played when you send a message or receive one in a conversation.
+* Another sound is played if you receive a message from another user.
+<!-- The app works offline you can use it without internet and you can send text messages only when you come back online they will be automatically sent. -->
+<!-- Finally you can click on the arrow down button at the home page and the web app is installed in your device. -->
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Thank you so much for checking this project don't forget to put a star to encourage me
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
