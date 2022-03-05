@@ -9,7 +9,7 @@ this app is just an open source project and it doesn't have the feature of delet
 ## Live Demo
 
 Search for "Md Mahfuz Rana" and talk with me.
-https://whatsapp-cloneee-5af64.web.app/ ALLOW NOTIFICATIONS !!!
+https://whatsapp-clone-84e00.web.app/ ALLOW NOTIFICATIONS !!!
 the app may not run because free limits of firebase or hosting service has been exceeded !!
 
 ## Features of the app
